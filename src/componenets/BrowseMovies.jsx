@@ -1,12 +1,14 @@
 import { Component } from "react"
-import MovieRow from "./MovieRow";
+import MovieRow from "./MovieRow"
+import MySpinner from './MySpinner'
 
 
 class BrowseMovies extends Component {
   state = {
       movies: null,
       movies2: null,
-      movies3: null
+      movies3: null,
+      isLoading: true
 
   };
 
@@ -22,10 +24,13 @@ class BrowseMovies extends Component {
             [updateMovie]: data.Search
           }
         )
+        this.setState({isLoading: false})
       } else {
+        this.setState({isLoading: false})
       }
     } catch (e) {
-      console.log(e);
+      console.log(e)
+      this.setState({isLoading: false})
     }
   }
 
@@ -38,6 +43,11 @@ class BrowseMovies extends Component {
   render() {
     return (
       <>
+
+        {
+            this.state.isLoading && 
+            <MySpinner />
+        }
         { this.state.movies &&
             <MovieRow movies={this.state.movies}/>
         }
