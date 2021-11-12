@@ -7,6 +7,7 @@ import SearchResults from './SearchResults'
 import HeroMovie from './HeroMovie';
 import Footer from './Footer';
 import SubHeading from './SubHeading';
+import MovieRow from './MovieRow';
 
 class MyNavbar extends React.Component {
 
@@ -75,6 +76,7 @@ class MyNavbar extends React.Component {
                     <>
                         <HeroMovie />
                         <SubHeading />
+                        <MovieRow />
                         <Footer />
                     </>
                 }
