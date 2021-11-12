@@ -1,12 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import Footer from './componenets/Footer';
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <>
+      <Footer />
+    </>
   );
 }
 
-export default App;
+export default App
