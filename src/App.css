@@ -1,38 +1,233 @@
-.App {
-  text-align: center;
+body {
+  background-color: #222;
+  color: #fff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.netflix-red {
+  color: #e50914;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.navbar-bg-black {
+  background-color: #222;
+}
+
+.netflix-logo {
+  height: 50px;
+}
+
+.profile-type {
+  color: #ffffff80;
+}
+
+.profile-type:hover {
+  color: #ffffffcc;
+  cursor: pointer;
+}
+
+.drop-down-avatar {
+  height: 35px;
+}
+
+.dropdown-toggle {
+  color: #fff;
+}
+
+.dropdown-toggle:hover {
+  color: #fff;
+}
+
+.bg-black {
+  background-color: rgb(19, 19, 19);
+}
+
+.dropdown-item {
+  color: #fff;
+}
+
+h4,
+h1 {
+  color: wheat;
+}
+
+.h1 {
+  font-size: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.images {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.hero-img-container {
+  position: relative;
+}
+
+.hero-img {
+  max-height: 75vh;
+  object-fit: cover;
+}
+
+.hero-img-btn {
+  position: absolute;
+  bottom: 300px;
+  left: 50px;
+}
+
+.hero-img-btn2 {
+  position: absolute;
+  bottom: 300px;
+  left: 160px;
+}
+
+.btn-transparent {
+  background-color: #222;
+  color: #ffffff80;
+}
+
+.btn-transparent:hover {
+  color: #ffffffcc;
+}
+
+.movie-title {
+  position: absolute;
+  bottom: 400px;
+  left: 50px;
+}
+
+.movie-description {
+  position: absolute;
+  bottom: 150px;
+  left: 50px;
+  width: 40vw;
+}
+
+.dropdown-item:hover {
+  color: #222;
+}
+
+.bi-list,
+.bi-grid-3x2-gap {
+  color: #ffffff80;
+  border: 1px solid #ffffff80;
+  padding: 0 0.5rem;
+}
+
+.social-icons i {
+  font-size: 1.5rem;
+}
+
+.transparent-btn {
+  background-color: #222;
+  border: 1px solid #ffffff80;
+  color: #ffffff80;
+}
+
+.transparent-btn:hover {
+  color: #ffffffcc;
+}
+
+footer div i,
+footer div div p {
+  color: #ffffff80;
+}
+
+footer div i:hover,
+footer div div p:hover {
+  color: #ffffffcc;
+  cursor: pointer;
+}
+
+.copyright:hover {
+  color: #ffffff80;
+  cursor: default;
+}
+
+@media screen and (max-width: 920px) {
+  .movie-description {
+    bottom: 100px;
+    left: 50px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 800px) {
+  .movie-description {
+    bottom: 75px;
+    left: 50px;
   }
-  to {
-    transform: rotate(360deg);
+  .hero-img-btn {
+    bottom: 275px;
+  }
+
+  .hero-img-btn2 {
+    bottom: 275px;
+  }
+
+  .movie-title {
+    bottom: 350px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .movie-description {
+    bottom: 50px;
+    left: 30px;
+    width: 50vw;
+  }
+  .hero-img-btn {
+    bottom: 225px;
+    left: 30px;
+  }
+
+  .hero-img-btn2 {
+    bottom: 225px;
+    left: 135px;
+  }
+
+  .movie-title {
+    bottom: 300px;
+    left: 30px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .movie-description {
+    display: none;
+  }
+  .hero-img-btn {
+    bottom: 150px;
+    left: 30px;
+  }
+
+  .hero-img-btn2 {
+    bottom: 150px;
+    left: 135px;
+  }
+
+  .movie-title {
+    bottom: 250px;
+    left: 30px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .hero-img-btn,
+  .hero-img-btn2 {
+    display: none;
+  }
+
+  .movie-title {
+    bottom: 200px;
+    left: 30px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .movie-title {
+    bottom: 175px;
+    left: 30px;
   }
 }
