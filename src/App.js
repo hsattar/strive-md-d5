@@ -1,10 +1,12 @@
-import Footer from './componenets/Footer';
 import MyNavbar from './componenets/MyNavbar';
+import HeroMovie from './componenets/HeroMovie';
+import Footer from './componenets/Footer';
 
 function App() {
   return (
     <>
-    <MyNavbar/>
+      <MyNavbar/>
+      <HeroMovie />
       <Footer />
     </>
   );
