@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar, Nav, Form, } from 'react-bootstrap'
+import { Navbar, Nav, Form, NavItem } from 'react-bootstrap'
 import { Col, Container, Row, FormControl, Button } from 'react-bootstrap'
 
 class MyNavbar extends React.Component {
@@ -10,27 +10,43 @@ class MyNavbar extends React.Component {
 
     render() {
         return (
-<>
-<Navbar bg="dark" expand="lg">
-  <Navbar.Brand><a className="navbar-brand" href="#"><img class="netflix-logo" src="../assets/netflix_logo.png" alt=""/></a>Netflix</Navbar.Brand>
-  <Navbar.Toggle aria-controls="basic-navbar-nav" />
-  <Navbar.Collapse id="basic-navbar-nav">
-    <Nav className="mr-auto">
-      <Nav.Link href="#home">Home</Nav.Link>
-      <Nav.Link href="#link">Link</Nav.Link>
-      
-    </Nav>
+
+<Navbar bg="dark" variant="dark" expand="lg">
+  <Navbar.Brand>
+    <a className="navbar-brand " href="#"><img className="netflix-logo" src="../assets/netflix_logo.png" alt=""/></a>
+    </Navbar.Brand>
+
+    <div className="collapse navbar-collapse text-white" id="navbarSupportedContent">
+        <ul className="navbar-nav mr-auto">
+            <li className="nav-item"><a className="nav-link" href="#">Home</a></li>
+            <li className="nav-item"><a className="nav-link" href="#">TV Shows<span class="sr-only">(current)</span></a></li>
+            <li className="nav-item active"><a className="nav-link" href="#">Movies</a></li>
+            <li className="nav-item"><a className="nav-link" href="#">Recently Added</a></li>
+            <li className="nav-item"><a className="nav-link" href="#">My List</a></li>
+        </ul>
+
+        <div className="form-inline my-2 my-lg-0">
+        
+        <span className="mx-2 profile-type">Kids</span>
+        <i className="bi bi-bell-fill mx-2"></i>
+        
+        <img className="drop-down-avatar mr-2" src="../assets/avatar.png" alt=""/>
+
+
     <Form inline>
       <FormControl 
       type="text"
       placeholder="Search here"
       value={this.state.searchQuery}
       onChange={e => this.setState({ searchQuery: e.target.value })} />
-      <Button variant="outline-success">Search</Button>
+      <Button variant="dark"><i className="bi bi-search mx-2"></i></Button>
     </Form>
-  </Navbar.Collapse>
+        </div>
+
+    </div>
+  
 </Navbar>
-</>
+
 
 
 
