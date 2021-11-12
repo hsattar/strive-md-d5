@@ -30,7 +30,7 @@ const Footer = () => {
                 <FooterLinks text={links4} />
 
                 <Col xs='12' className="mt-3">
-                    <Button className="transparent-btn">Service Code</Button>
+                    <Button variant='dark' className="transparent-btn">Service Code</Button>
                 </Col>
 
                 <Col xs='12' className="mt-3">
