@@ -19,13 +19,18 @@ class MyNavbar extends React.Component {
 
     handleSubmit = async e => {
         e.preventDefault()
-        if (this.state.searchQuery.length === 0) {
-            this.setState({showSearchresults: false})
-        } else {
-            const response = await fetch(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${this.state.searchQuery}`)
-            const data = await response.json()
-            this.setState({data: data})
-            if (this.state.searchQuery) this.setState({showSearchresults: true})
+        try {
+            if (this.state.searchQuery.length === 0) {
+                this.setState({showSearchresults: false})
+            } 
+            else {
+                const response = await fetch(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${this.state.searchQuery}`)
+                const data = await response.json()
+                this.setState({data: data})
+                if (this.state.searchQuery) this.setState({showSearchresults: true})
+            }
+        } catch (error) {
+            console.error(error)
         }
     }
 

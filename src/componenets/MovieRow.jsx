@@ -51,7 +51,7 @@ class MovieRow extends Component {
 
   fetchMovies3 = async () => {
 
-    let url = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=christmas`
+    let url = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=marvel`
     try {
       const response = await fetch(url)
       const data = await response.json()
