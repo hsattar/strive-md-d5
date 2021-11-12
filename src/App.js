@@ -1,4 +1,3 @@
-import './App.css'
 import Footer from './componenets/Footer';
 import MyNavbar from './componenets/MyNavbar';
 
