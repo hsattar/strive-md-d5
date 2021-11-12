@@ -4,6 +4,9 @@ import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 import SearchResults from './SearchResults'
+import HeroMovie from './HeroMovie';
+import Footer from './Footer';
+import SubHeading from './SubHeading';
 
 class MyNavbar extends React.Component {
 
@@ -15,11 +18,14 @@ class MyNavbar extends React.Component {
 
     handleSubmit = async e => {
         e.preventDefault()
-        const response = await fetch(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${this.state.searchQuery}`)
-        const data = await response.json()
-        console.log(data)
-        this.setState({data: data})
-        this.setState({showSearchresults: true})
+        if (this.state.searchQuery.length === 0) {
+            this.setState({showSearchresults: false})
+        } else {
+            const response = await fetch(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${this.state.searchQuery}`)
+            const data = await response.json()
+            this.setState({data: data})
+            if (this.state.searchQuery) this.setState({showSearchresults: true})
+        }
     }
 
     render() {
@@ -63,6 +69,14 @@ class MyNavbar extends React.Component {
                 </Navbar>
 
                 {this.state.showSearchresults && <SearchResults movies={this.state.data} searchQuery={this.state.searchQuery}/>}
+                {
+                    !this.state.showSearchresults &&      
+                    <>
+                        <HeroMovie />
+                        <SubHeading />
+                        <Footer />
+                    </>
+                }
             </>
         )
     }
