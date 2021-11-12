@@ -4,21 +4,24 @@ import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 import SearchResults from './SearchResults'
-import HeroMovie from './HeroMovie';
-import Footer from './Footer';
-import SubHeading from './SubHeading';
-import BrowseMovies from './BrowseMovies';
+import HeroMovie from './HeroMovie'
+import Footer from './Footer'
+import SubHeading from './SubHeading'
+import BrowseMovies from './BrowseMovies'
+import MySpinner from './MySpinner'
 
 class MyNavbar extends React.Component {
 
     state = {
         searchQuery: '',
         showSearchresults: false,
-        data: null
+        data: null,
+        isLoading: false
     }
 
     handleSubmit = async e => {
         e.preventDefault()
+        this.setState({isLoading: true})
         try {
             if (this.state.searchQuery.length === 0) {
                 this.setState({showSearchresults: false})
@@ -28,6 +31,7 @@ class MyNavbar extends React.Component {
                 const data = await response.json()
                 this.setState({data: data})
                 if (this.state.searchQuery) this.setState({showSearchresults: true})
+                this.setState({isLoading: false})
             }
         } catch (error) {
             console.error(error)
@@ -67,6 +71,10 @@ class MyNavbar extends React.Component {
                                     value={this.state.searchQuery}
                                     onChange={e => this.setState({ searchQuery: e.target.value })} 
                                 />
+                                {
+                                    this.state.isLoading && 
+                                    <MySpinner />
+                                }
                                 <Button type="submit" variant="dark"><i className="bi bi-search mx-2"></i></Button>
                             </Form>
                         </div>
@@ -75,7 +83,9 @@ class MyNavbar extends React.Component {
                 
                 </Navbar>
 
-                {this.state.showSearchresults && <SearchResults movies={this.state.data} searchQuery={this.state.searchQuery}/>}
+                {this.state.showSearchresults && 
+                    <SearchResults movies={this.state.data} searchQuery={this.state.searchQuery}/>
+                }
                 {
                     !this.state.showSearchresults &&      
                     <>
