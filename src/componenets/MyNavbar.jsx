@@ -54,7 +54,8 @@ class MyNavbar extends React.Component {
 
 
                             <Form inline onSubmit={this.handleSubmit}>
-                                <FormControl 
+                                <FormControl
+                                    className='bg-dark text-white'
                                     type="text"
                                     placeholder="Search here"
                                     value={this.state.searchQuery}
