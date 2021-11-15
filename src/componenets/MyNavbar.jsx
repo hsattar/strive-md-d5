@@ -8,7 +8,7 @@ import HeroMovie from './HeroMovie'
 import Footer from './Footer'
 import SubHeading from './SubHeading'
 import BrowseMovies from './BrowseMovies'
-import MySpinner from './MySpinner'
+import Loading from './Loading'
 
 class MyNavbar extends React.Component {
 
@@ -25,6 +25,7 @@ class MyNavbar extends React.Component {
         try {
             if (this.state.searchQuery.length === 0) {
                 this.setState({showSearchresults: false})
+                this.setState({isLoading: false})
             } 
             else {
                 const response = await fetch(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${this.state.searchQuery}`)
@@ -73,7 +74,7 @@ class MyNavbar extends React.Component {
                                 />
                                 {
                                     this.state.isLoading && 
-                                    <MySpinner />
+                                    <Loading />
                                 }
                                 <Button type="submit" variant="dark"><i className="bi bi-search mx-2"></i></Button>
                             </Form>

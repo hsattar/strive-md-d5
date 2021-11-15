@@ -231,3 +231,7 @@ footer div div p:hover {
     left: 30px;
   }
 }
+
+.loading-card {
+  min-height: 500px;
+}

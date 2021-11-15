@@ -1,6 +1,6 @@
 import { Component } from "react"
 import MovieRow from "./MovieRow"
-import MySpinner from './MySpinner'
+import Loading from './Loading'
 
 
 class BrowseMovies extends Component {
@@ -44,19 +44,10 @@ class BrowseMovies extends Component {
     return (
       <>
 
-        {
-            this.state.isLoading && 
-            <MySpinner />
-        }
-        { this.state.movies &&
-            <MovieRow movies={this.state.movies}/>
-        }
-        { this.state.movies2 &&
-            <MovieRow movies={this.state.movies2}/>
-        }
-        { this.state.movies3 &&
-            <MovieRow movies={this.state.movies3}/>
-        }
+        { this.state.isLoading &&  <Loading /> }
+        { this.state.movies && <MovieRow movies={this.state.movies}/> }
+        { this.state.movies2 && <MovieRow movies={this.state.movies2}/> }
+        { this.state.movies3 && <MovieRow movies={this.state.movies3}/> }
       </>
     );
   }
